@@ -1,0 +1,27 @@
+.btn {
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.btn-primary {
+    background-color: dodgerblue;
+    border: 1px solid dodgerblue;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: transparent;
+    border: 1px solid dodgerblue;
+    color: dodgerblue;
+}
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid dodgerblue;
+    color: dodgerblue;
+}
+.btn-secondary:hover {
+    background-color: dodgerblue;
+    border: 1px solid dodgerblue;
+    color: white;
+}
