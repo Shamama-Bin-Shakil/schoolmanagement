@@ -11,7 +11,7 @@ const password = process.env.PASS;
 const accEmail = process.env.EMAIL;
 
 //Route -> (0) REGISTER Account
-route.get("/", (req, res) => {
+route.get("/ok", (req, res) => {
   res.json({
     msg: "welcome to node app"
   })
