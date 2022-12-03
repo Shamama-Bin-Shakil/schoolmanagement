@@ -24,13 +24,20 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "./public")));
 
 // Router Auth
-app.use("/", require("./server/router/Auth"));
-// Router Contact
-app.use("/", require("./server/router/Contact"));
-// Route Admin
-app.use("/", require("./server/router/Admin"));
-// Route Fees
-app.use("/", require("./server/router/Fees"));
+
+app.get("/", (req, res) => {
+  res.json({
+    message: "everything's is fine"
+  })
+});
+
+// app.use("/", require("./server/router/Auth"));
+// // Router Contact
+// app.use("/", require("./server/router/Contact"));
+// // Route Admin
+// app.use("/", require("./server/router/Admin"));
+// // Route Fees
+// app.use("/", require("./server/router/Fees"));
 
 
 app.listen(port, () =>
