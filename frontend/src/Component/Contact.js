@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 
 export default function Contact() {
+  const host = "http://localhost:8080"
   const [detail, setDetail] = useState({
     name: "",
     email: "",
@@ -20,7 +21,7 @@ export default function Contact() {
 
   const FormSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:8080/api/contact", {
+    const response = await fetch(`${host}/api/contact`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

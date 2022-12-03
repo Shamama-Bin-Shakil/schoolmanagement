@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
 export default function Change_password() {
+  const host = "http://localhost:8080"
   let Navigate = useNavigate();
 
   if(!localStorage.getItem("userAuthEmail")) {
@@ -30,7 +31,7 @@ export default function Change_password() {
      return alert("Password do not match");
     }
     const response = await fetch(
-      "http://localhost:8080/api/forgetchangepassword",
+      `${host}/api/forgetchangepassword`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

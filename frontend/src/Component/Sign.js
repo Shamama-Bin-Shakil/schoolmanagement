@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Sign() {
+  const host = "http://localhost:8080"
   const navigate = useNavigate();
   const [detail, setDetail] = useState({
     name: "",
@@ -33,7 +34,7 @@ export default function Sign() {
 
   const FormSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:8080/api/register", {
+    const response = await fetch(`${host}/api/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({name: detail.name, email: detail.email, password: detail.password, gender: selected, birth_date: detail.birth_date}),

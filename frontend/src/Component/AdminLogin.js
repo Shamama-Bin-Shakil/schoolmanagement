@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 
 export default function AdminLogin() {
+  const host = "http://localhost:8080"
   const navigate = useNavigate();
   const [detail, setDetail] = useState({
     email: "",
@@ -24,7 +25,7 @@ export default function AdminLogin() {
 
   const FormSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:8080/api/adminauth", {
+    const response = await fetch(`${host}/api/adminauth`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: detail.email, password: detail.password }),

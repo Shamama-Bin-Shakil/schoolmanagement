@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
 export default function Otp() {
+  const host = "http://localhost:8080"
   let Navigate = useNavigate();
   const [detail, setDetail] = useState({
     otp: "",
@@ -20,7 +21,7 @@ export default function Otp() {
 
   const FormSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:8080/api/otp", {
+    const response = await fetch(`${host}/api/otp`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

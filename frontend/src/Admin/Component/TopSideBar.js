@@ -1,7 +1,6 @@
 import React from "react";
 import { useRef } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-
 export default function TopSideBar() {
   const navigate = useNavigate();
   const ref = useRef();

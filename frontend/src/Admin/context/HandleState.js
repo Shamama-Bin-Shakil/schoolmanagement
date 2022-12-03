@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import context from "./Context";
 const HandleState = (props) => {
+  const host = "http://localhost:8080"
+
   const navigate = useNavigate();
   const [students, setStudents] = useState([]);
   const [admin, setAdmin] = useState([]);
@@ -11,7 +13,7 @@ const HandleState = (props) => {
 
 
   const getData = async () => {
-    const response = await fetch("http://localhost:8080/api/totalstudents", {
+    const response = await fetch(`${host}/api/totalstudents`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
@@ -20,7 +22,7 @@ const HandleState = (props) => {
   };
 
   const onDelete = async (id) => {
-    let url = `http://localhost:8080/api/studentdelete/${id}`;
+    let url = `${host}/api/studentdelete/${id}`;
     const response = await fetch(url, {
       method: "GET",
       headers: { "content-type": "application/json" },
@@ -39,7 +41,7 @@ const HandleState = (props) => {
 
   // Admin Detail
   const adminDetail = async () => {
-    let url = "http://localhost:8080/api/adminfetch";
+    let url = `${host}/api/adminfetch`;
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -54,7 +56,7 @@ const HandleState = (props) => {
   };
 
   const studentDetail = async () => {
-    let url = "http://localhost:8080/api/studentfetch";
+    let url = `${host}/api/studentfetch`;
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -69,7 +71,7 @@ const HandleState = (props) => {
   };
 
   const studentFeeDetail = async (id) => {
-    let url = `http://localhost:8080/api/feefetch/${id}`;
+    let url = `${host}/api/feefetch/${id}`;
     const response = await fetch(url, {
       method: "GET",
       headers: {
@@ -91,7 +93,7 @@ const HandleState = (props) => {
       month: month,
       date: date,
     };
-    let url = `http://localhost:8080/api/fee/${userid}`;
+    let url = `${host}/api/fee/${userid}`;
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -106,7 +108,7 @@ const HandleState = (props) => {
   };
 
   const getDataSingle = async (id) => {
-    const url = `http://localhost:8080/api/studentdetail/${id}`;
+    const url = `${host}/api/studentdetail/${id}`;
     const response = await fetch(url, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
