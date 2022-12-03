@@ -4,8 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon start",
-    "dist": "mkdir -p dist && cp -R node_modules src server.js ... dist"
+    "start": "node start"
   },
   "keywords": [],
   "author": "",
